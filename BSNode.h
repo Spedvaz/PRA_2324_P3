@@ -13,16 +13,16 @@ class BSNode {
 
 	BSNode(T elem, BSNode<T>* left = nullptr, BSNode <T>* right = nullptr);
 	friend std::ostream& operator<<(std::ostream &out, const BSNode<T> &bsn){
-		out <<"Elemento: " <<bsn.elem << std::endl;
-		return out;
-	}    
+	out <<"Elemento: " <<bsn.elem << std::endl;
+	return out;
+}    
 };
 
 #endif
 
 template <typename T>
 
-BSNode::BSNode(T elem, BSNode<T>* left = nullptr, BSNode <T>* right = nullptr){
+BSNode<T>::BSNode(T elem, BSNode<T>* left, BSNode <T>* right){
 	this -> elem = elem;
 	this -> right = right;
 	this -> left = left;
