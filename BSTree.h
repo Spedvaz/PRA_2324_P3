@@ -107,9 +107,7 @@ void BSTree<T>::print_inorder(std::ostream &out, BSNode<T>* n) const{
 	if(n != nullptr){
 		print_inorder(out, n -> left);
 		out << n -> elem << std::endl;
-		if(n -> right != nullptr){
-			print_inorder(out, n -> right);
-		}
+		print_inorder(out, n -> right);
 	}
 }
 
