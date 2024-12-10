@@ -1,15 +1,14 @@
 bin/testTableEntry: testTableEntry.cpp TableEntry.h
 		mkdir -p bin
 		g++ -o bin/testTableEntry testTableEntry.cpp
-clean:
-		rm -rf *.o *.gch bin
 bin/testHashTable: testHashTable.cpp Dict.h HashTable.h TableEntry.h 
 		mkdir -p bin
 		g++ -o bin/testHashTable testHashTable.cpp
-clean:
-		rm -rf *.o *.gch bin
 bin/testBSTree: testBSTree.cpp BSNode.h BSTree.h
 		mkdir -p bin
 		g++ -o bin/testBSTree testBSTree.cpp
-clean: 
+bin/testBSTreeDict: testBSTreeDict.cpp BSTreeDict.h Dict.h TableEntry.h
+		mkdir -p bin
+		g++ -o bin/testBSTreeDict testBSTreeDict.cpp
+clean:
 		rm -rf *.o *.gch bin
