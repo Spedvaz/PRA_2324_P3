@@ -56,7 +56,7 @@ HashTable<V>::HashTable(int size){ //hecho
 template <typename V>
 
 HashTable<V>::~HashTable(){
-	delete[] table; //hecho
+	delete[]table; //hecho
 }
 
 template <typename V>
@@ -70,12 +70,12 @@ template <typename V>
 V HashTable<V>::operator[](std::string key){
 	int pos = h(key);
 	Node<TableEntry<V>>* current = table[pos].first;
-	do{
+	while(current != nullptr){
 		if(current -> data.key == key){
 			return current -> data.value;
-		}
+		}		
 		current = current -> next;
-	}while(current != nullptr);
+	}
 	
 	throw runtime_error ("Key no encontrada");
 }
