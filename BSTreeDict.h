@@ -41,7 +41,9 @@ BSTreeDict<V>::BSTreeDict(){
 template <typename V>
 
 BSTreeDict<V>::~BSTreeDict(){
-	delete tree;
+	if(tree != nullptr){
+		delete tree;
+	}
 }
 
 
@@ -64,7 +66,8 @@ template <typename V>
 
 V BSTreeDict<V>::search(std::string key){
 	TableEntry<V> entrada(key);
-	return tree->search(entrada).value;
+	TableEntry<V> encontrado = tree->search(entrada);
+	return encontrado.value;
 }
 
 
@@ -72,7 +75,7 @@ template <typename V>
 
 V BSTreeDict<V>::remove(std::string key){
 	TableEntry<V> entrada(key);
-	V eliminado = search(key);
+	V eliminado = tree->search(entrada).value;
 	tree->remove(entrada);
 	return eliminado;
 }
@@ -83,4 +86,3 @@ template <typename V>
 int BSTreeDict<V>::entries(){
 	return tree->size();
 }
-
